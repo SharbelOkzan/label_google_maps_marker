@@ -33,4 +33,15 @@ class _PinPointMarker extends MarkerLayout {
         paint);
     return canvas;
   }
+
+  @override
+  ui.Offset getOffset({
+    required double width,
+    required double height,
+    required double textWidth,
+    required double textHeight,
+  }) {
+    return ui.Offset(
+        (width * 0.5) - textWidth * 0.5, (height * .35) - textHeight * 0.5);
+  }
 }
