@@ -13,13 +13,15 @@ abstract class MarkerLayout {
 
   ui.Canvas getCanvas(
     ui.PictureRecorder pictureRecorder, {
-    required double width,
-    required double height,
     required Color color,
   });
 
+  double get height;
+  double get width;
+
   const MarkerLayout();
-  factory MarkerLayout.pinPoint() => _PinPointMarker();
+  factory MarkerLayout.pinPoint({double size = 150}) =>
+      _PinPointMarker(size: size);
   factory MarkerLayout.rectangle() => throw UnimplementedError();
   factory MarkerLayout.circular() => throw UnimplementedError();
 }

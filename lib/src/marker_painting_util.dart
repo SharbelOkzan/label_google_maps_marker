@@ -17,8 +17,6 @@ class MapPaintingUtil {
     final Canvas canvas = markerLayout.getCanvas(
       pictureRecorder,
       color: color,
-      height: height,
-      width: width,
     );
     TextPainter painter = TextPainter(textDirection: TextDirection.ltr);
     painter.text = TextSpan(
