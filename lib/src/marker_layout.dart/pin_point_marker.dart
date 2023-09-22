@@ -1,7 +1,7 @@
 part of 'marker_layout.dart';
 
 class _PinPointMarker extends MarkerLayout {
-  static const double _pipPointCurvedSectionHeightRatio = 2.7;
+  static const double _pipPointCurvedSectionHeightRatio = 4;
 
   final double size;
 
@@ -28,10 +28,10 @@ class _PinPointMarker extends MarkerLayout {
   }
 
   @override
-  double get height => throw UnimplementedError();
+  double get height => size;
 
   @override
-  double get width => throw UnimplementedError();
+  double get width => size / 2;
 
   ui.Canvas _getCanvas(
     ui.PictureRecorder pictureRecorder, {
@@ -42,15 +42,13 @@ class _PinPointMarker extends MarkerLayout {
     final Paint paint = Paint()..color = color;
     final Canvas canvas = Canvas(pictureRecorder);
 
+    final Radius radius = Radius.circular(0);
     final Radius radius = Radius.circular(width / 2);
     canvas.clipPath(Path()
-      ..moveTo(0, height / _pipPointCurvedSectionHeightRatio)
-      ..lineTo(width / 2, height.toDouble())
-      ..lineTo(width.toDouble(), height / _pipPointCurvedSectionHeightRatio)
-      ..arcToPoint(
-        Offset(width.toDouble(), 0),
-      )
-      ..arcToPoint(const Offset(0, 0)));
+      ..moveTo(width / 2, height)
+      ..conicTo(0, _pipPointCurvedSectionHeightRatio, width / 2, 0, 2)
+      ..conicTo(
+          width, _pipPointCurvedSectionHeightRatio, width / 2, height, 2));
     canvas.drawRRect(
         RRect.fromRectAndCorners(
           Rect.fromLTWH(0.0, 0.0, width.toDouble(), height.toDouble()),
