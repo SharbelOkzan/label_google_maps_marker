@@ -2,7 +2,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:label_google_maps_marker/src/marker_layout.dart/marker_layout.dart';
+import 'package:label_google_maps_marker/src/marker_layout/marker_layout.dart';
 
 class MapPaintingUtil {
   Future<BitmapDescriptor> paintMarkerWithLabel({

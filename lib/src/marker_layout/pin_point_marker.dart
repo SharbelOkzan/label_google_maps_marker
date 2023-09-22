@@ -43,7 +43,6 @@ class _PinPointMarker extends MarkerLayout {
     final Canvas canvas = Canvas(pictureRecorder);
 
     final Radius radius = Radius.circular(0);
-    final Radius radius = Radius.circular(width / 2);
     canvas.clipPath(Path()
       ..moveTo(width / 2, height)
       ..conicTo(0, _pipPointCurvedSectionHeightRatio, width / 2, 0, 2)
