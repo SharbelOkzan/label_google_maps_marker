@@ -1,7 +1,7 @@
 part of 'marker_layout.dart';
 
 class _PinPointMarker extends MarkerLayout {
-  static const double _pipPointCurvedSectionHeightRatio = 4;
+  static const double _pipPointCurvedSectionHeightRatio = 5;
 
   final double size;
 
@@ -24,7 +24,7 @@ class _PinPointMarker extends MarkerLayout {
     required double textHeight,
   }) {
     return ui.Offset(
-        (width * 0.5) - textWidth * 0.5, (height * .35) - textHeight * 0.5);
+        width.half - textWidth.half, height.third - textHeight.half);
   }
 
   @override
@@ -39,24 +39,45 @@ class _PinPointMarker extends MarkerLayout {
     required double height,
     required Color color,
   }) {
-    final Paint paint = Paint()..color = color;
     final Canvas canvas = Canvas(pictureRecorder);
 
-    final Radius radius = Radius.circular(0);
-    canvas.clipPath(Path()
-      ..moveTo(width / 2, height)
-      ..conicTo(0, _pipPointCurvedSectionHeightRatio, width / 2, 0, 2)
-      ..conicTo(
-          width, _pipPointCurvedSectionHeightRatio, width / 2, height, 2));
-    canvas.drawRRect(
-        RRect.fromRectAndCorners(
-          Rect.fromLTWH(0.0, 0.0, width.toDouble(), height.toDouble()),
-          topLeft: radius,
-          topRight: radius,
-          bottomLeft: radius,
-          bottomRight: radius,
+    canvas.clipPath(
+      Path()
+        ..moveTo(width.half, height)
+        ..conicTo(
+          0,
+          height / _pipPointCurvedSectionHeightRatio.half,
+          width.quarter,
+          height / _pipPointCurvedSectionHeightRatio,
+          2,
+        )
+        ..cubicTo(
+          width.half - width.eighth,
+          height.eighth,
+          width.half + width.eighth,
+          height.eighth,
+          width - width.quarter,
+          height / _pipPointCurvedSectionHeightRatio,
+        )
+        ..conicTo(
+          width,
+          height / _pipPointCurvedSectionHeightRatio.half,
+          width.half,
+          height,
+          2,
         ),
-        paint);
+    );
+    canvas.drawColor(color, BlendMode.color);
     return canvas;
   }
+}
+
+extension _ on num {
+  double get half => this / 2;
+
+  double get quarter => this / 4;
+
+  double get third => this / 3;
+
+  double get eighth => this / 8;
 }
