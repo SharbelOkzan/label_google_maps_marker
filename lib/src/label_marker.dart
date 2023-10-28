@@ -5,9 +5,10 @@ import 'package:label_google_maps_marker/src/marker_layout/marker_layout.dart';
 
 class LabelMarker extends Marker {
   const LabelMarker({
-    required this.color,
+    required this.backgroundColor,
     required this.label,
     required this.layout,
+    this.textStyle,
     required super.markerId,
     super.alpha,
     super.anchor,
@@ -27,7 +28,8 @@ class LabelMarker extends Marker {
 
   final String label;
   final MarkerLayout layout;
-  final Color color;
+  final Color backgroundColor;
+  final TextStyle? textStyle;
 
   Future<Marker> toGoogleMapMarker() async {
     BitmapDescriptor labelBitmap = await MapPaintingUtil().paintMarkerWithLabel(
@@ -35,7 +37,8 @@ class LabelMarker extends Marker {
         markerLayout: layout,
         width: layout.width,
         height: layout.height,
-        color: color);
+        textStyle: textStyle,
+        backgroundColor: backgroundColor);
     return copyWith(iconParam: labelBitmap);
   }
 }

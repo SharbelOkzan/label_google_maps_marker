@@ -11,12 +11,12 @@ class MapPaintingUtil {
     TextStyle? textStyle,
     required double width,
     required double height,
-    required Color color,
+    required Color backgroundColor,
   }) async {
     final ui.PictureRecorder pictureRecorder = ui.PictureRecorder();
     final Canvas canvas = markerLayout.getCanvas(
       pictureRecorder,
-      color: color,
+      color: backgroundColor,
     );
     TextPainter painter = TextPainter(textDirection: TextDirection.ltr);
     painter.text = TextSpan(
