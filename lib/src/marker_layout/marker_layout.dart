@@ -2,6 +2,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 
 part 'pin_point_marker.dart';
+part 'circular_marker_layout.dart';
 
 abstract class MarkerLayout {
   ui.Offset getLabelOffset({
@@ -22,6 +23,6 @@ abstract class MarkerLayout {
   const MarkerLayout();
   factory MarkerLayout.pinPoint({double size = 150}) =>
       _PinPointMarker(size: size);
-  factory MarkerLayout.rectangle() => throw UnimplementedError();
-  factory MarkerLayout.circular() => throw UnimplementedError();
+  factory MarkerLayout.circular({double radius = 150}) =>
+      _CircularMarkerLayout(radius: radius);
 }
