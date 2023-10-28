@@ -25,7 +25,7 @@ class MapPaintingUtil {
     );
     painter.layout();
 
-    Offset labelOffset = markerLayout.getOffset(
+    Offset labelOffset = markerLayout.getLabelOffset(
       width: width,
       height: height,
       textWidth: painter.width,

@@ -1,7 +1,7 @@
 part of 'marker_layout.dart';
 
 class _PinPointMarker extends MarkerLayout {
-  static const double _pipPointCurvedSectionHeightRatio = 5;
+  static const double _pinPointCurvedSectionHeightRatio = 5;
 
   final double size;
 
@@ -17,7 +17,7 @@ class _PinPointMarker extends MarkerLayout {
   }
 
   @override
-  ui.Offset getOffset({
+  ui.Offset getLabelOffset({
     required double width,
     required double height,
     required double textWidth,
@@ -46,9 +46,9 @@ class _PinPointMarker extends MarkerLayout {
         ..moveTo(width.half, height)
         ..conicTo(
           0,
-          height / _pipPointCurvedSectionHeightRatio.half,
+          height / _pinPointCurvedSectionHeightRatio.half,
           width.quarter,
-          height / _pipPointCurvedSectionHeightRatio,
+          height / _pinPointCurvedSectionHeightRatio,
           2,
         )
         ..cubicTo(
@@ -57,11 +57,11 @@ class _PinPointMarker extends MarkerLayout {
           width.half + width.eighth,
           height.eighth,
           width - width.quarter,
-          height / _pipPointCurvedSectionHeightRatio,
+          height / _pinPointCurvedSectionHeightRatio,
         )
         ..conicTo(
           width,
-          height / _pipPointCurvedSectionHeightRatio.half,
+          height / _pinPointCurvedSectionHeightRatio.half,
           width.half,
           height,
           2,
