@@ -8,8 +8,7 @@ class _CircularMarkerLayout extends MarkerLayout {
   @override
   ui.Canvas getCanvas(ui.PictureRecorder pictureRecorder,
       {required ui.Color color}) {
-    return _getCanvas(pictureRecorder,
-        width: width, height: height, color: color);
+    return _getCanvas(pictureRecorder, color: color);
   }
 
   @override
@@ -30,8 +29,6 @@ class _CircularMarkerLayout extends MarkerLayout {
 
   ui.Canvas _getCanvas(
     ui.PictureRecorder pictureRecorder, {
-    required double width,
-    required double height,
     required Color color,
   }) {
     final Canvas canvas = Canvas(pictureRecorder);
