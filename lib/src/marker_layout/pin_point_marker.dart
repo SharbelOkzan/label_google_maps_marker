@@ -23,8 +23,8 @@ class _PinPointMarker extends MarkerLayout {
     required double textWidth,
     required double textHeight,
   }) {
-    return ui.Offset(
-        width.half - textWidth.half, height.third - textHeight.half);
+    return ui.Offset(width.half - textWidth.half,
+        (height.third + height.eighth) - textHeight.half);
   }
 
   @override
