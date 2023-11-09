@@ -15,18 +15,18 @@ Flutter package allows creating Google Maps markers with text labels
 
 ## Motivation
 
-In many applications we need to show some text on the map markers. This text could be computed at runtime, thus, we can't pre-embed it a marker asset. For instance, an accommodation booking app that shows the number of available hotels in an area. If you're using flutter_google_maps, this can't be achieved out-of-the-box, so this package can help.
+In many applications we need to show some text on the map markers. This text could be computed at runtime, thus, we can't pre-embed it a marker asset. For instance, an accommodation booking app that shows the number of available hotels in an area. If you're using google_maps_flutter, this can't be achieved out-of-the-box, so this package can help.
 
 It's best to be used with short text, like a symbol, number, or one word
 
-<img width="300px" src="https://github.com/SharbelOkzan/label_google_maps_marker/blob/main/media/google_maps_labeled_marker_screenshot.jpg"/>> 
+<img width="300px" src="https://raw.githubusercontent.com/SharbelOkzan/label_google_maps_marker/main/media/google_maps_labeled_marker_screenshot.jpg"/>> 
 
 ## Getting started
 
 Add it in *pubspec.yaml*
 ```
 dependencies:
-  label_google_maps_marker: ^0.0.1
+  label_google_maps_marker: ^0.0.2
 ```
 ## Usage
 

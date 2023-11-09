@@ -1,7 +1,7 @@
 name: label_google_maps_marker
 description: A package to create simple Google Maps marker with label text.
-version: 0.0.1
-homepage: "https://github.com/xxx"
+version: 0.0.3
+homepage: "https://github.com/SharbelOkzan/label_google_maps_marker"
 
 environment:
   sdk: ">=2.18.2 <4.0.0"
