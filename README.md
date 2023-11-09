@@ -19,7 +19,7 @@ In many applications we need to show some text on the map markers. This text cou
 
 It's best to be used with short text, like a symbol, number, or one word
 
-<img width="300px" src="https://github.com/SharbelOkzan/label_google_maps_marker/raw/master/media/google_maps_labeled_marker_screenshot.jpg"/>> 
+<img width="300px" src="https://github.com/SharbelOkzan/label_google_maps_marker/blob/main/media/google_maps_labeled_marker_screenshot.jpg"/>> 
 
 ## Getting started
 
