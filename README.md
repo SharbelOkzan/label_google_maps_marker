@@ -11,29 +11,40 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Flutter package allows creating Google Maps markers with text labels
 
-## Features
+## Motivation
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+In many applications we need to show some text on the map markers. This text could be computed at runtime, thus, we can't pre-embed it a marker asset. For instance, an accommodation booking app that shows the number of available hotels in an area. If you're using flutter_google_maps, this can't be achieved out-of-the-box, so this package can help.
+
+It's best to be used with short text, like a symbol, number, or one word
+
+<img width="300px" src="https://github.com/SharbelOkzan/label_google_maps_marker/raw/master/media/google_maps_labeled_marker_screenshot.jpg"/>> 
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
+Add it in *pubspec.yaml*
+```
+dependencies:
+  label_google_maps_marker: ^0.0.1
+```
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+`LabelMarker` extends `Marker` and exposes all it params.
+Additionally, it has `label` param where you can pass the text you want to show on the label.
+Other params `layout`, `backgroundColor` and `textStyle` are for styling.
 
 ```dart
-const like = 'sample';
+LabelMarker(
+    position: _randomLocations[i],
+    label: "SomeText",
+    backgroundColor: Colors.purple,
+    layout: MarkerLayout.pinPoint(),
+    markerId: MarkerId("$i"))
 ```
+
+See ./example for a ready-to-paste example 
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Supporting SVG markers is planned, PRs are welcome. 
